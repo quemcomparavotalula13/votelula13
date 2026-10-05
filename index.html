@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ce1626">
+  <title>Quem compara vota Lula — cards por tema</title>
+  <meta name="description" content="Escolha um tema, encontre os comparativos do guia e compartilhe os cards. Educação, saúde, emprego, economia e mais.">
+  <meta property="og:title" content="Quem compara vota Lula">
+  <meta property="og:description" content="Escolha um tema. Encontre uma comparação. Compartilhe o card.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ce1626'/%3E%3Cpath d='m16 5 3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1z' fill='%23ffdc32'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Quem compara vota Lula, início"><span class="brand-star" aria-hidden="true">★</span><span>Quem compara<br><strong>vota Lula<span class="brand-dot">.</span></strong></span></a>
+      <a class="guide-link" href="#materiais"><span class="icon" data-icon="book"></span> Guias completos <span class="pdf-label">PDF</span></a>
+    </div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="main-title">
+      <div class="intro-copy"><span class="eyebrow">A comparação na palma da mão</span><h1 id="main-title">Escolha um tema.<br><span>Compartilhe a comparação.</span></h1><p>Cards, indicadores e fontes para comparar e compartilhar.</p></div>
+      <div class="search-area"><label for="search">Sobre o que você quer comparar?</label><div class="search-field"><span class="icon" data-icon="search"></span><input id="search" type="search" placeholder="Busque educação, saúde, salário…" autocomplete="off"><button id="clear-search" aria-label="Limpar busca" hidden><span class="icon" data-icon="x"></span></button></div><div class="search-hint">3 guias <span>·</span> Cards, dados e fontes <span>·</span> Busca por tema</div></div>
+    </section>
+    <div class="volunteer-intro"><span class="volunteer-star" aria-hidden="true">★</span><div><strong>Seja um voluntário dessa campanha</strong><p>Encontre uma comparação e compartilhe com quem você conhece.</p></div></div>
+    <section class="catalog" id="catalogo" aria-label="Comparativos e materiais de consulta">
+      <div class="formats" id="formats" role="group" aria-label="Tipo de conteúdo"></div><p class="format-description" id="format-description"></p>
+      <div class="theme-row"><span class="filter-label">Explore por tema</span><button class="reset-top" id="reset-top" hidden>Limpar filtros</button></div>
+      <nav class="themes" id="themes" aria-label="Filtrar cards por tema"></nav>
+      <div class="results-heading"><h2 id="results-title">Todos os comparativos</h2><span id="results-count" role="status" aria-live="polite">35 cards</span></div>
+      <div id="grid" class="grid" aria-busy="true"><p class="loading">Carregando os comparativos…</p></div>
+      <div id="empty" class="empty" hidden><span class="icon" data-icon="search"></span><h3>Nenhum conteúdo encontrado</h3><p>Tente outro termo ou escolha um dos temas acima.</p><button class="button primary" id="reset">Ver todos os materiais</button></div>
+      <div id="load-error" class="empty" hidden><h3>Não foi possível carregar os materiais</h3><p>Atualize a página para tentar novamente.</p><button class="button primary" id="retry">Tentar novamente</button></div>
+    </section>
+    <section class="materials" id="materiais" aria-labelledby="materials-title"><div><span class="eyebrow">Os materiais originais</span><h2 id="materials-title">Três guias. Informação ao seu alcance.</h2><p>Consulte os PDFs completos. Datas, valores e recortes seguem o material de origem indicado em cada conteúdo.</p></div><div class="material-links"><a href="assets/guia-comparativo.pdf" target="_blank" rel="noopener">Cards comparativos <span>PDF · 47 páginas</span></a><a href="assets/guia-de-bolso.pdf" target="_blank" rel="noopener">Guia de bolso <span>PDF · 27 páginas</span></a><a href="assets/veja-o-que-lula-fez.pdf" target="_blank" rel="noopener">Veja o que Lula fez <span>PDF · 124 páginas</span></a></div></section>
+  </main>
+  <footer><div class="footer-brand">Quem compara <strong>vota Lula.</strong></div><div class="site-notice"><strong>Site não oficial · Iniciativa voluntária</strong><br>Criado para transformar os guias em PDF em informação acessível e fácil de compartilhar.<br>Sem vínculo oficial com a campanha ou com o governo.</div></footer>
+  <dialog id="card-dialog" aria-labelledby="dialog-title">
+    <button class="close-dialog" id="close-dialog" aria-label="Fechar card"><span class="icon" data-icon="x"></span></button>
+    <div class="detail"><div class="detail-art"><img id="detail-image" alt="" width="1080" height="1920"><div id="detail-content" hidden></div></div><div class="detail-info"><span class="eyebrow" id="detail-theme"></span><h2 id="dialog-title"></h2><p id="detail-description"></p><div class="detail-actions"><button class="button primary" id="share-card"><span class="icon" data-icon="share"></span> Compartilhar card</button><a class="button whatsapp" id="detail-whatsapp" target="_blank" rel="noopener"><span class="icon" data-icon="message"></span> Enviar link no WhatsApp</a><a class="button outlined" id="detail-download" download><span class="icon" data-icon="download"></span> Baixar imagem</a><button class="button text-button" id="copy-link"><span class="icon" data-icon="link"></span> Copiar link do card</button></div><p class="sharing-note">No celular, compartilhe a imagem nos aplicativos disponíveis. Para publicar no Instagram, baixe o card.</p><div class="detail-source"><span class="icon" data-icon="book"></span><div><span id="detail-source-label">Card original do guia</span><br><a id="detail-source" target="_blank" rel="noopener">Ver página no PDF</a></div></div></div></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
